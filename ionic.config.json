@@ -1,0 +1,7 @@
+{
+  "name": "iPede",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

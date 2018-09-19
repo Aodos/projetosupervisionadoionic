@@ -1,0 +1,125 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+ion-content.fundoInicial{
+    background-image: url(../assets/imgs/comida.jpg);
+}
+
+ion-item.camposFlutuantes{
+    background-color: transparent;
+    color: #356A8D;
+}
+
+main { 
+    width:320px;
+    margin:-1px auto 10px; 
+    font-family: Roboto, Arial, Helvetica, sans-serif
+ }
+
+header{
+    width:320px; 
+    height:auto;
+    //border:1px solid rgb(255, 0, 0);
+}
+
+div.headerLogado{
+    //border:1px solid rgb(255, 0, 0);
+    display: block;
+    overflow: hidden;
+    height: 90px;
+}
+div.imgUsuario{
+    //border:1px solid rgb(255, 0, 0);
+    margin-left: 5px;
+    width: 73px;
+    height: 73px;
+    float: right;
+    //background: #FAFAFA;
+}
+
+div.imgComida {
+    //border:1px solid rgb(255, 0, 0);
+    margin-left: 12px;
+    width: 73px;
+    height: 73px;
+    float: left;
+    background: #FAFAFA;
+}
+div.textUsuario{
+   // border:1px solid rgb(255, 0, 0);
+    width: 170px;
+    float: right;
+    margin-top: 20px;
+    text-align: right;
+    font-size: 12px;
+}
+div.boasVindasUsuario{
+    // border:1px solid rgb(255, 0, 0);
+     width: 170px;
+     float: right;
+     margin-top: 0px;
+     text-align: right;
+     font-size: 10px;
+ }
+
+div.botaoPrincipal{
+    //border:1px solid rgb(255, 0, 0);
+    width:320px;
+    margin:-1px auto 10px;
+}
+
+div.botaoPrincipal button{
+    width: 300px;
+    margin:-1px auto -1px 9px;
+    background-color: #356A8D;
+}
+
+div.conteudoPrincipal{
+    //border:1px solid rgb(255, 0, 0);
+    height: 80px;
+}
+
+div.caixaConteudoPrincipal{
+   // border:1px solid rgb(255, 0, 0);
+    background: #FAFAFA;
+    border-radius: 15px;
+}
+
+div.barrinhaConteudo{
+    height: 73px;
+    width: 1px;
+    float: left;
+    margin-left: 1px;
+    background: #356A8D;
+}
+
+div.nomeRestaurante{
+    //border:1px solid rgb(255, 0, 0);
+    width: 220px;
+    font-size: 12.5px;
+    float: left;
+    margin-left: 5px; 
+    margin-top: 13px; 
+}
+
+div.distanciaRestaurante{
+    //border:1px solid rgb(255, 0, 0);
+    width: 220px;
+    font-size: 12.5px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 3px; 
+}
