@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { RestaranteService } from '../../services/domain/categoria.service';
+import { RestauranteDTO } from '../../models/restaurantes.dto';
 
 /**
  * Generated class for the PrincipalPage page.
@@ -15,11 +17,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PrincipalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  restaurantes: RestauranteDTO[];
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public restService: RestaranteService) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PrincipalPage');
+    this.restService.findAll().subscribe(response => {
+      this.restaurantes = response;
+    },
+    error => {
+      console.log(error);
+    });   
+  }
+
+  goToItensRest(rest: RestauranteDTO){
+    this.navCtrl.push('ItensRestPage',{
+      rest: rest
+    });
+  }
+
+  getItems(ev: any){
+    console.log(ev.target.value);
   }
 
 }

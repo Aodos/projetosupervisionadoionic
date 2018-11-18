@@ -25,28 +25,28 @@
 
     </div>
 
-    <ion-searchbar 
-    (ionInput)="getItems($event)"
-    [animated]="true"
-    ></ion-searchbar>
-
     <div class="caixaConteudoPrincipal">
       <h1 style="font-size: 13px;
-      margin-left: 18px;
       padding-top: 10px;
       color: #356A8D;
-      ">Restaurantes próximos</h1>
+      text-align: center;
+      font-size: 20px;
+      ">Detalhes do Item</h1>
 
-      <!--Div de criação de item-->
+      <div style="
+      height: 1px;
+      background-color: #356A8D;
+      "></div>
 
-      <div class="conteudoPrincipal" *ngFor = "let rest of restaurantes" (click)="goToItensRest(rest)">
-          <div class="imgComida"><img src="../../assets/imgs/McDn.png"></div>
-          <div class="barrinhaConteudo"></div>
-          <div class="nomeRestaurante">{{ rest.nomeRestaurante }} </div>
-          <div class="distanciaRestaurante">Distancia:  {{ rest.latitude }}</div>
-      </div>
-      
-      <!--Fim Div de criação de item-->
+      <div class="imgItem">IMG</div>
+      <div class="nomeItem"> {{ item.nme_nome_item}} </div>
+      <div class="descItem"> {{ item.dsc_descricao_item}} </div>
+
+      <div style="
+        height: 60px;
+        background-color: #356A8D;
+        color: white;
+      ">Adicionar item: {{item.vlr_valor_item}}</div>
 
     </div>
 

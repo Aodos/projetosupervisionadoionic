@@ -1,0 +1,86 @@
+<ion-content>
+  <main>
+    <div class="headerLogado">
+      <img src= "" style="width: 50px;
+      margin-left: -30px;
+      float: left;
+      ">
+
+      <div class="imgUsuario"><div><img src="../../assets/imgs/McDn.png"></div></div>
+      <div class="textUsuario">Olá, Jordileinison</div>
+      <div class="boasVindasUsuario">Boa Noite,<br> veja nossa opções para sua janta.</div>
+
+      <div style="
+      height: 1px;
+      margin-top: 80px;
+      background-color: #356A8D;
+      "></div>
+
+    </div>
+
+    <div class="caixaConteudoPrincipal">
+      <h1 style="font-size: 18px;
+      color: #356A8D;
+      text-align: center;
+      margin-bottom: -4px;
+      "> {{rest.nomeRestaurante}} </h1>
+
+      <div style="
+      height: 1px;
+      margin-top: 7px;
+      background-color: #356A8D;
+      "></div>
+
+      <!--Div de criação de item-->
+
+      <div class="conteudoPrincipal2" *ngFor = "let x of itens" (click)="goToItem(x)">
+        <div class="ftItem" style="
+          float: right;
+          width: 120px;
+          height: 76px;
+          "></div>  
+        <div class="nomeItem" style="
+          width: 190px;
+          margin-left: 10px;
+          margin-top: 5px;
+          color: #356A8D;
+          "> {{x.nme_nome_item}} </div>
+          <div class="descItem" style="
+          width: 190px;
+          font-size: 12px;
+          margin-left: 10px;
+          color: #356A8D;
+          margin-top: 5px;
+          text-align:justify;
+          "> {{x.dsc_descricao_item}} </div>
+          <div class="valorItem" style="
+          width: 190px;
+          margin-left: 10px;
+          margin-top: 5px;
+          color: #B58187;
+          font-size: 15px;
+          text-align: center;
+          ">R$ {{x.vlr_valor_item}}</div>
+      </div>
+      
+      <!--Fim Div de criação de item-->
+
+    </div>
+
+
+
+  </main>
+
+  <div style="
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #356A8D;
+"><div style="
+margin-top: 30px;
+text-align: center;
+color: white;
+font-size: 20px;">VER PEDIDO &emsp;&emsp;&emsp; &emsp;&emsp; R$36,00</div></div>
+
+</ion-content>
