@@ -10,6 +10,9 @@ import { LoginPageModule } from '../pages/login/login.module';
 import { PrincipalPageModule } from '../pages/principal/principal.module';
 import { RestaranteService } from '../services/domain/categoria.service';
 import { ItensService } from '../services/domain/itens.service';
+import { ErrorInterceptorProvider } from '../interceptor/error-inteceptor';
+import { AuthService } from '../services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { ItensService } from '../services/domain/itens.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestaranteService,
-    ItensService
+    ItensService,
+    ErrorInterceptorProvider,
+    AuthService
   ]
 })
 export class AppModule {}

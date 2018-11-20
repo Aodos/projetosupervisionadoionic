@@ -4,13 +4,6 @@ import { ItensService } from '../../services/domain/itens.service';
 import { ItensDTO } from '../../models/intens.rest';
 import { RestauranteDTO } from '../../models/restaurantes.dto';
 
-/**
- * Generated class for the ItensRestPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-itens-rest',

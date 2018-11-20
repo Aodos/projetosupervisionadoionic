@@ -16,14 +16,14 @@
 
         <ion-item class="camposFlutuantes">
           <ion-label floating>Usuário</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input [(ngModel)] = "credencial.email" type="text"></ion-input>
         </ion-item>
       </div>
 
       <div class="botaoPrincipal">
         <ion-item class="camposFlutuantes">
           <ion-label floating>Senha</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input [(ngModel)] = "credencial.senha" type="password"></ion-input>
         </ion-item>
       </div>
     </ion-list>

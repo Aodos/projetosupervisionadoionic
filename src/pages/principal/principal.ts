@@ -31,7 +31,6 @@ export class PrincipalPage {
       this.restaurantes = response;
     },
     error => {
-      console.log(error);
     });   
   }
 
