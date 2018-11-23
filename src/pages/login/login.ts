@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CredenciaisDTO } from '../../models/credenciais.dto';
 import { AuthService } from '../../services/auth.service';
-
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the LoginPage page.
  *
@@ -22,10 +22,12 @@ export class LoginPage {
     senha: ""
   };
 
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public auth: AuthService) {
+    public auth: AuthService,
+    public alerCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -37,16 +39,36 @@ export class LoginPage {
     
   }
 
-  goToPrincipal(){  
+  goToPrincipal(email: string){  
     this.auth.autheticate(this.credencial)
       .subscribe(response => {
-        console.log(response.headers.get('Authorization'));
-        this.navCtrl.setRoot('PrincipalPage')
+        console.log("Passando aqui");
+        this.auth.successfulLogin(response.headers.get('Authorization'));
+        this.navCtrl.setRoot('PrincipalPage',{
+          email: email
+        }); 
       },
       error => {
-
+        this.doAlert();
       })
     
+      
+  }
+
+  doAlert() {
+
+    let alert = this.alerCtrl.create({
+
+      title: 'Login inválido',
+
+      message: 'Crendenciais usadas não são válidas, tente novamente',
+
+      buttons: ['Ok']
+
+    });
+
+    alert.present()
+
   }
 
 }

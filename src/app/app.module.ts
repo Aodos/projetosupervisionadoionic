@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'; 
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, AlertController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -12,6 +12,8 @@ import { RestaranteService } from '../services/domain/categoria.service';
 import { ItensService } from '../services/domain/itens.service';
 import { ErrorInterceptorProvider } from '../interceptor/error-inteceptor';
 import { AuthService } from '../services/auth.service';
+import { StorageService } from '../services/storage.service';
+import { ClienteService } from '../services/domain/cliente.service';
 
 
 @NgModule({
@@ -37,8 +39,11 @@ import { AuthService } from '../services/auth.service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestaranteService,
     ItensService,
+    ClienteService,
     ErrorInterceptorProvider,
-    AuthService
+    AuthService,
+    AlertController,
+    StorageService
   ]
 })
 export class AppModule {}

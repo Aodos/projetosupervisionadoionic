@@ -7,8 +7,7 @@
       ">
 
       <div class="imgUsuario"><div><img src="../../assets/imgs/McDn.png"></div></div>
-      <div class="textUsuario">Olá, Jordileinison</div>
-      <div class="boasVindasUsuario">Boa Noite,<br> veja nossa opções para sua janta.</div>
+      <div class="textUsuario">Olá, {{user}}</div>
 
       <div style="
       height: 1px;
@@ -81,6 +80,6 @@
 margin-top: 30px;
 text-align: center;
 color: white;
-font-size: 20px;">VER PEDIDO &emsp;&emsp;&emsp; &emsp;&emsp; R$36,00</div></div>
+font-size: 20px;" (click)="getPedido()" >VER PEDIDO &emsp;&emsp;&emsp; &emsp;&emsp; R${{valorpedido}}</div></div>
 
 </ion-content>

@@ -9,7 +9,9 @@ import { NavController, IonicPage } from 'ionic-angular';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
-    
+    let teste: string = "http://localhost:8080/pedidos/14";
+    //teste = teste.replace('/',':');
+    console.log(teste.split('/'));
   }
 
   goToLogin(){

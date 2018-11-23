@@ -7,8 +7,7 @@
       ">
 
       <div class="imgUsuario"><div><img src="../../assets/imgs/McDn.png"></div></div>
-      <div class="textUsuario">Olá, Jordileinison</div>
-      <div class="boasVindasUsuario">Boa Noite,<br> veja nossa opções para sua janta.</div>
+      <div class="textUsuario">Olá, {{user}}</div>
 
       <div style="
       height: 1px;
@@ -51,7 +50,8 @@
         text-align: center;
         font-size: 20px;
         padding-top: 18px;
-      ">Adicionar item: &emsp;&emsp;R${{precoatual.toFixed(2)}}</div></div>
+      " (click)= "adicionaItem()"
+      >Adicionar item: &emsp;&emsp;R${{precoatual.toFixed(2)}}</div></div>
 
     </div>
 
