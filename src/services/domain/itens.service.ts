@@ -52,4 +52,18 @@ export class ItensService{
             console.log("ta no add item");
         return this.http.post(`${API_config.baseUrl}/pedidos/${localStorage.getItem("numeroPedido")}`, null, {'params': params, 'headers': authHeader2, observe: 'response'});
     }
+
+    finalizaPgto(){
+        let token = this.storage.getLocalUser();
+        let authHeader2 = new HttpHeaders({'Authorization': 'Bearer ' + token});
+        return this.http.put(`${API_config.baseUrl}/pedidos/${localStorage.getItem("numeroPedido")}/pago`, null, {'headers': authHeader2, observe: 'response'});
+    }
+
+    retornaTodosPedidos() : Observable<PedidosDTO[]>{
+        let token = this.storage.getLocalUser();
+        let authHeader2 = new HttpHeaders({'Authorization': 'Bearer ' + token});
+        return this.http.get<PedidosDTO[]>(`${API_config.baseUrl}/pedidos/${localStorage.getItem("idUserName")}/pedidos`,
+        {'headers': authHeader2});
+    }
+
 }

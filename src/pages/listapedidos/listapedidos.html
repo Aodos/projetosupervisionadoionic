@@ -1,0 +1,63 @@
+<ion-content>
+    <main>
+      <div class="headerLogado">
+        <img src= "../../assets/imgs/LogoIpede.png" style="width: 100px;
+        margin-left: -30px;
+        float: left;
+        ">
+  
+        <div class="imgUsuario"><div><img src="../../assets/imgs/McDn.png"></div></div>
+        <div class="textUsuario">Olá, {{user}}</div>
+  
+        <div style="
+        height: 1px;
+        margin-top: 80px;
+        background-color: #356A8D;
+        "></div>
+  
+      </div>
+  
+      <div class="caixaConteudoPrincipal">
+        <h1 style="font-size: 18px;
+        color: #356A8D;
+        text-align: center;
+        margin-bottom: -4px;
+        ">Pedidos Realizados</h1>
+  
+        <div style="
+        height: 1px;
+        margin-top: 7px;
+        background-color: #356A8D;
+        "></div>
+
+        <div class="conteudoPrincipal2" *ngFor = "let x of pedidos"> 
+            <div class="nomeItemP" style="
+              color: #356A8D;
+              "> Restaurante: {{x.nomeRestaurante}} </div>
+              <div class="nomeItemP" style="
+              color: #356A8D;
+              "> Nome Cliente: {{x.nomeCliente}} </div>
+              <div class="qntItemP" style="
+              color: #356A8D;
+              ">ID do Pedido: {{x.idPedido}}</div>
+              <div class="valorItemP" style="
+              color: #B58187;
+              ">Valor do pedido: R$ {{x.valorTotal}}</div>
+              <div style="
+              height: 1px;
+              margin-top: 7px;
+              background-color: #356A8D;
+              "></div>
+          </div>
+  
+     
+        
+      </div>
+  
+  
+  
+    </main>
+  
+    
+  
+  </ion-content>

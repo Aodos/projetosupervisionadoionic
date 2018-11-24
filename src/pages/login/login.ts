@@ -44,6 +44,7 @@ export class LoginPage {
       .subscribe(response => {
         console.log("Passando aqui");
         this.auth.successfulLogin(response.headers.get('Authorization'));
+        localStorage.setItem("emailLogado",email);
         this.navCtrl.setRoot('PrincipalPage',{
           email: email
         }); 

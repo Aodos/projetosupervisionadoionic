@@ -106,7 +106,9 @@ export class ItensRestPage {
   }
 
   getPedido(){
-    console.log(this.pedido);
+    this.navCtrl.push('PedidosPage',{
+      pedido: this.pedido
+    });
   }
 
 }

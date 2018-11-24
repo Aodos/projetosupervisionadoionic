@@ -31,7 +31,7 @@ export class PrincipalPage {
     public clienteService: ClienteService,
     public itensService: ItensService) {
 
-      localStorage.setItem("emailLogado",this.navParams.get('email'));
+      
       
       
   }
@@ -68,6 +68,7 @@ export class PrincipalPage {
         this.cliente = response;
         resolve(response);
         localStorage.setItem("userName", this.cliente[0].nme_primeiro_nome);
+        localStorage.setItem("idUserName", this.cliente[0].idt_id_cliente);
       },
       error => {
         reject(error)
@@ -86,6 +87,10 @@ export class PrincipalPage {
 
   getItems(ev: any){
     console.log(ev.target.value);
+  }
+
+  goToVerPedidos(){
+    this.navCtrl.push('ListapedidosPage');
   }
 
 
