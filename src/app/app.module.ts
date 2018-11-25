@@ -14,6 +14,7 @@ import { ErrorInterceptorProvider } from '../interceptor/error-inteceptor';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { ClienteService } from '../services/domain/cliente.service';
+import {Geolocation} from '@ionic-native/geolocation'
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ClienteService } from '../services/domain/cliente.service';
     ErrorInterceptorProvider,
     AuthService,
     AlertController,
-    StorageService
+    StorageService,
+    Geolocation
   ]
 })
 export class AppModule {}

@@ -1,0 +1,69 @@
+<!--
+  Generated template for the CadastroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content padding>
+    <div
+        style="max-width:200px;
+        max-height:150px;
+        width: auto;
+        height: auto;
+
+        margin: auto;
+        background: #fff;
+        padding: 10px;
+        "
+        >
+            <img src="../../assets/imgs/LogoIpede.png">
+            Cadastro de usuário
+</div>
+
+    <ion-item class="camposFlutuantes">
+        <ion-label floating>Primeiro Nome</ion-label>
+        <ion-input [(ngModel)] = "cliente.nme_primeiro_nome" type="text"></ion-input>
+      </ion-item>
+      
+      <ion-item class="camposFlutuantes">
+        <ion-label floating>Último Nome</ion-label>
+        <ion-input [(ngModel)] = "cliente.nme_ultimo_nome" type="text"></ion-input>
+      </ion-item>
+  
+      <ion-item class="camposFlutuantes">
+         <ion-label floating>CPF</ion-label>
+         <ion-input [(ngModel)] = "cliente.cpf_cliente" type="text"></ion-input>
+        </ion-item>
+    
+       <ion-item class="camposFlutuantes">
+         <ion-label floating>Email</ion-label>
+         <ion-input [(ngModel)] = "cliente.eml_email" type="text"></ion-input>
+        </ion-item>
+  
+       <ion-item class="camposFlutuantes">
+          <ion-label floating>Celular(Sem DDD)</ion-label>
+          <ion-input [(ngModel)] = "cliente.cel_celular" type="text"></ion-input>
+        </ion-item>
+    
+        <ion-item class="camposFlutuantes">
+          <ion-label floating>Senha</ion-label>
+          <ion-input [(ngModel)] = "cliente.pwd_senha" type="password"></ion-input>
+        </ion-item>
+    
+        <ion-item class="camposFlutuantes">
+           <ion-label floating>DDD</ion-label>
+           <ion-input [(ngModel)] = "cliente.ddd_ddd" type="text"></ion-input>
+          </ion-item>
+      
+         <ion-item class="camposFlutuantes">
+           <ion-label floating>Endereço foto</ion-label>
+           <ion-input [(ngModel)] = "cliente.url_foto_cliente" type="text"></ion-input>
+          </ion-item>
+
+         <div class="botaoPrincipal" style="margin-top: 15px">
+            <button ion-button (click)="finalizaCadastro()">Finalizar Cadastro</button>
+          </div>
+</ion-content>

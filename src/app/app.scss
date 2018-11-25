@@ -26,16 +26,23 @@ div.headerLogado{
     height: 90px;
 }
 div.imgUsuario{
-    //border:1px solid rgb(255, 0, 0);
+    border:1px solid #356A8D;
+    border-radius: 100%;
+    overflow: hidden;
     margin-left: 5px;
+    margin-top: 5px;
     width: 73px;
     height: 73px;
     float: right;
     //background: #FAFAFA;
 }
 
+
+
 div.imgComida {
     //border:1px solid rgb(255, 0, 0);
+        border-radius: 100%;
+    overflow: hidden;
     margin-left: 12px;
     width: 73px;
     height: 73px;
@@ -43,12 +50,12 @@ div.imgComida {
     background: #FAFAFA;
 }
 div.textUsuario{
-   // border:1px solid rgb(255, 0, 0);
+    //border:1px solid rgb(255, 0, 0);
     width: 170px;
     float: right;
-    margin-top: 20px;
+    margin-top: 25px;
     text-align: right;
-    font-size: 12px;
+    font-size: 20px;
 }
 div.boasVindasUsuario{
     // border:1px solid rgb(255, 0, 0);

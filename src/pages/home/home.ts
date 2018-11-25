@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
 
+
 @IonicPage()
 @Component({
   selector: 'page-home',
@@ -8,15 +9,19 @@ import { NavController, IonicPage } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-    let teste: string = "http://localhost:8080/pedidos/14";
-    //teste = teste.replace('/',':');
-    console.log(teste.split('/'));
+  coords: any;
+  constructor(public navCtrl: NavController,
+              ) {
+
   }
 
   goToLogin(){
-    this.navCtrl.setRoot('LoginPage')
-
+    this.navCtrl.setRoot('LoginPage',{
+      coords: this.coords
+    })
   }
 
+  goToCadastro(){
+    this.navCtrl.push('CadastroPage');
+  }
 }

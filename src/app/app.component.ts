@@ -25,7 +25,6 @@ export class MyApp {
       {titulo: 'Home', component: 'HomePage'}
     ];
 
-    this.stringGlobal = 'TESTESTES';
   }
 
 }

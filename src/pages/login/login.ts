@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { CredenciaisDTO } from '../../models/credenciais.dto';
 import { AuthService } from '../../services/auth.service';
 import { AlertController } from 'ionic-angular';
+import { Geolocation } from '../../../node_modules/@ionic-native/geolocation';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -22,16 +24,26 @@ export class LoginPage {
     senha: ""
   };
 
+  coords: Coordinates;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public auth: AuthService,
-    public alerCtrl: AlertController) {
+    public alerCtrl: AlertController,
+    public geo: Geolocation,
+    public loadingCtrl: LoadingController) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    let opt : {
+      enableHighAccuracy: true
+    }
+    let watch = this.geo.watchPosition(opt);
+    watch.subscribe(resp => {
+      this.coords = resp.coords;
+    });
   }
 
   goToHomePage(){
@@ -45,8 +57,10 @@ export class LoginPage {
         console.log("Passando aqui");
         this.auth.successfulLogin(response.headers.get('Authorization'));
         localStorage.setItem("emailLogado",email);
+        localStorage.setItem("lat",this.coords.latitude.toFixed(7));
+        localStorage.setItem("lng",this.coords.longitude.toFixed(7));
         this.navCtrl.setRoot('PrincipalPage',{
-          email: email
+          email: email,
         }); 
       },
       error => {

@@ -9,4 +9,5 @@ export interface RestauranteDTO{
     nomeRestaurante: string;
     senhaRestaurante: string;
     url_foto_restaurante: string;
+    distance: string;
 }

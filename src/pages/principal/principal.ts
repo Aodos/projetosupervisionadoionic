@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { RestaranteService } from '../../services/domain/categoria.service';
 import { RestauranteDTO } from '../../models/restaurantes.dto';
 import { ClienteService } from '../../services/domain/cliente.service';
@@ -23,22 +23,23 @@ export class PrincipalPage {
   restaurantes: RestauranteDTO[];
   cliente: ClienteDTO[];
   user:string;
+  coords: Coordinates;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public restService: RestaranteService,
     public clienteService: ClienteService,
-    public itensService: ItensService) {
+    public itensService: ItensService,
+    public loadingCtrl: LoadingController) {
 
-      
-      
-      
+
   }
-  
+
+
 
   ionViewDidLoad() {
-    this.restService.findAll().subscribe(response => {
+    this.restService.findNear(localStorage.getItem("lat"),localStorage.getItem("lng")).subscribe(response => {
       this.restaurantes = response;
     },
     error => {
@@ -59,7 +60,6 @@ export class PrincipalPage {
   }
 
   ionViewCanEnter(){
-    console.log("in ionViewCanEnter");
     return new Promise((resolve, reject) => { 
       if (this.navParams.get('fail')) {
         reject(true)
