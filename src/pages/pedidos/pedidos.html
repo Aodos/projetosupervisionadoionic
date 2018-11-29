@@ -6,7 +6,7 @@
       float: left;
       ">
 
-      <div class="imgUsuario"><div><img src="../../assets/imgs/McDn.png"></div></div>
+      <div class="imgUsuario"><div><img src="{{imgCliente}}"></div></div>
       <div class="textUsuario">Olá, {{user}}</div>
 
       <div style="
@@ -32,29 +32,17 @@
 
       <!---->
       <div class="conteudoPrincipal2" *ngFor = "let x of itensDoPedido">
-        <div class="ftItem" style="
-          float: right;
-          width: 120px;
-          height: 76px;
-          "></div>  
+       
         <div class="nomeItem" style="
-          width: 190px;
-          margin-left: 10px;
-          margin-top: 5px;
           color: #356A8D;
           "> {{x.nomeItem}} </div>
           <div class="qntItem" style="
-          width: 190px;
           font-size: 12px;
-          margin-left: 10px;
           color: #356A8D;
-          margin-top: 5px;
           text-align:justify;
           text-align: center;
           "> x {{x.qntItem}}</div>
           <div class="valorItem" style="
-          width: 190px;
-          margin-left: 10px;
           margin-top: 5px;
           color: #B58187;
           font-size: 15px;

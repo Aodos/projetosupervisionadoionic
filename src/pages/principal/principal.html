@@ -13,7 +13,7 @@
       float: left;
       ">
 
-      <div class="imgUsuario"><div><img src="../../assets/imgs/perfArthur.jpg"></div></div>
+      <div class="imgUsuario"><div><img src={{imgCliente}}></div></div>
       <div class="textUsuario">Olá, {{user}}</div>
 
       <div style="
@@ -49,7 +49,7 @@
       <!--Div de criação de item-->
 
       <div class="conteudoPrincipal" *ngFor = "let rest of restaurantes" (click)="goToItensRest(rest)">
-          <div class="imgComida"><img src="http://www.aloalobahia.com/images/p/mcdonaldossssciks_alo_alo_bahia.png"></div>
+          <div class="imgComida"><img src="{{rest.url_foto_restaurante}}"></div>
           <div class="barrinhaConteudo"></div>
           <div class="nomeRestaurante">{{ rest.nomeRestaurante }} </div>
           <div class="distanciaRestaurante">Distancia:  {{ rest.distance.toFixed(2) }}</div>

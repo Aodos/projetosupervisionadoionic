@@ -20,6 +20,7 @@ export class ItensRestPage {
   user:string;
   pedido: PedidosDTO;
   valorpedido:string;
+  imgCliente: string;
   
 
   constructor(
@@ -35,6 +36,7 @@ export class ItensRestPage {
 
   ionViewDidLoad() {
     this.user = localStorage.getItem("userName");
+    this.imgCliente = localStorage.getItem("userIMG");
     this.itensService.findAll(this.rest.idRestaurante).subscribe(response => {
       this.itens = response;
     },

@@ -14,6 +14,7 @@ export class ItemPage {
   precoitem: number;
   qntpedido: number;
   user:string;
+  imgCliente: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public itemService: ItensService) {
     this.item = this.navParams.get('item');
@@ -24,6 +25,7 @@ export class ItemPage {
 
   ionViewDidLoad() {
     this.user = localStorage.getItem("userName");
+    this.imgCliente = localStorage.getItem("userIMG");
   }
 
   somanumero(){

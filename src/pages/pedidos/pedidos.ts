@@ -16,6 +16,7 @@ export class PedidosPage {
   valortotalpedido: number = 0;
   valorMulti:number = 0;
   user: string;
+  imgCliente: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alerCtrl: AlertController,
     public loadingCtrl: LoadingController,
     public itensService: ItensService) {
@@ -30,6 +31,7 @@ export class PedidosPage {
       this.valortotalpedido = Number(this.valortotalpedido) + vlr;
     })
     
+    this.imgCliente = localStorage.getItem("userIMG");
   }
 
   ionViewDidEnter(){

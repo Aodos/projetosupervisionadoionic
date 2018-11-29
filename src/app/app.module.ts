@@ -15,6 +15,7 @@ import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { ClienteService } from '../services/domain/cliente.service';
 import {Geolocation} from '@ionic-native/geolocation'
+import { InputMaskModule } from 'ionic-input-mask';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {Geolocation} from '@ionic-native/geolocation'
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     LoginPageModule,
-    PrincipalPageModule
+    PrincipalPageModule,
+    InputMaskModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

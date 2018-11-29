@@ -1,0 +1,48 @@
+<ion-content>
+  <main>
+    <div class="headerLogadoRest">
+      <img src="../../assets/imgs/LogoIpede.png">
+    </div>
+  </main>
+
+  <div class="caixaConteudoPrincipalRest">
+    <h1>Gerenciamento Restaurante</h1>   
+    <div style="
+      height: 1px;
+      background-color: #356A8D;
+    "></div> 
+
+    <div class="botaoPrincipalRest"
+    style="margin-top: 15px" *ngIf="btcst">
+            <button ion-button (click)="goToCadastro()">Cadastro Restaurante</button>
+    </div>
+
+    <div *ngIf="cadastroItem">
+      <ion-item class="camposFlutuantes">
+        <ion-label floating>Nome Item</ion-label>
+        <ion-input [(ngModel)] = "item.nme_nome_item" type="text"></ion-input>
+      </ion-item>
+      <ion-item class="camposFlutuantes">
+        <ion-label floating>Descrição Item</ion-label>
+        <ion-input [(ngModel)] = "item.dsc_descricao_item" type="text"></ion-input>
+      </ion-item>
+      <ion-item class="camposFlutuantes">
+        <ion-label floating>Valor Item</ion-label>
+        <ion-input [(ngModel)] = "item.vlr_valor_item" type="text"></ion-input>
+      </ion-item>
+      <ion-item class="camposFlutuantes">
+        <ion-label floating>Url Imagem Item</ion-label>
+        <ion-input [(ngModel)] = "item.url_foto_item" type="text"></ion-input>
+      </ion-item>
+      
+
+      <div class="botaoPrincipalRest"
+      style="margin-top: 15px">
+              <button ion-button (click)="realizaCadastro()">Cadastrar Item</button>
+      </div>
+
+
+
+  </div>
+  </div>
+</ion-content>

@@ -12,6 +12,7 @@ import { PedidosDTO } from '../../models/pedidos';
 export class ListapedidosPage {
   user:string;
   pedidos: PedidosDTO[];
+  imgCliente: string;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public itensService: ItensService) {
@@ -19,6 +20,7 @@ export class ListapedidosPage {
 
   ionViewDidLoad() {
     this.user = localStorage.getItem("userName");
+    this.imgCliente = localStorage.getItem("userIMG");
 
     this.itensService.retornaTodosPedidos().subscribe(response => {
       this.pedidos = response;

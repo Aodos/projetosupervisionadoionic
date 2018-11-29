@@ -23,6 +23,7 @@ export class PrincipalPage {
   restaurantes: RestauranteDTO[];
   cliente: ClienteDTO[];
   user:string;
+  imgCliente:string;
   coords: Coordinates;
 
   constructor(
@@ -46,6 +47,7 @@ export class PrincipalPage {
     }); 
 
     this.user = localStorage.getItem("userName");
+    this.imgCliente = localStorage.getItem("userIMG");
     localStorage.setItem("numeroPedido", "0");
   }
 
@@ -68,6 +70,7 @@ export class PrincipalPage {
         this.cliente = response;
         resolve(response);
         localStorage.setItem("userName", this.cliente[0].nme_primeiro_nome);
+        localStorage.setItem("userIMG", this.cliente[0].url_foto_cliente);
         localStorage.setItem("idUserName", this.cliente[0].idt_id_cliente);
       },
       error => {

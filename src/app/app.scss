@@ -37,11 +37,16 @@ div.imgUsuario{
     //background: #FAFAFA;
 }
 
+div.imgUsuario img{
+    width:100%;
+    height: 100%;
+}
+
 
 
 div.imgComida {
-    //border:1px solid rgb(255, 0, 0);
-        border-radius: 100%;
+    border:1px solid #356A8D;
+    border-radius: 100%;
     overflow: hidden;
     margin-left: 12px;
     width: 73px;
@@ -49,6 +54,49 @@ div.imgComida {
     float: left;
     background: #FAFAFA;
 }
+
+div.imgComida img{
+    width:100%;
+    height: 100%;
+}
+
+div.ftItem {
+    border:1px solid #356A8D;
+    overflow: hidden;
+    float: right;
+    width: 120px;
+    height: 100px;
+}
+
+div.ftItem img{
+    width:100%;
+    height: 100%;
+}
+
+div.imgItemD {
+    border:1px solid #356A8D;
+    overflow: hidden;
+    float: right;
+    height: 180px;
+}
+
+div.imgItemD img{
+    width:100%;
+    height: 100%;
+}
+
+div.ftItemP {
+    border:1px solid #356A8D;
+    overflow: hidden;
+    height: 180px;
+    margin: auto;
+}
+
+div.ftItemP img{
+    width:100%;
+    height: 100%;
+}
+
 div.textUsuario{
     //border:1px solid rgb(255, 0, 0);
     width: 170px;
@@ -154,4 +202,31 @@ div.mais{
     margin-top: -5px;
     text-align: center;
     float: left;
+}
+
+
+div.caixaConteudoPrincipalRest{
+    background: #FAFAFA;
+    border-radius: 15px;
+    margin: auto;
+    width: 80%;
+    overflow: hidden;
+}
+
+div.caixaConteudoPrincipalRest h1{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    color: #356A8D;
+}
+
+div.botaoPrincipalRest {
+    margin: auto;
+    width: 80%;
+}
+
+div.botaoPrincipalRest button{
+    margin: auto;
+    width: 100%;
+    background-color: #356A8D;
 }

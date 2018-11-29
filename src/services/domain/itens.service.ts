@@ -5,6 +5,7 @@ import { Observable } from "../../../node_modules/rxjs/Rx";
 import { ItensDTO } from "../../models/intens.rest";
 import { StorageService } from "../storage.service";
 import { PedidosDTO } from "../../models/pedidos";
+import { RestauranteDTO } from "../../models/restaurantes.dto";
 
 @Injectable()
 export class ItensService{
@@ -64,6 +65,26 @@ export class ItensService{
         let authHeader2 = new HttpHeaders({'Authorization': 'Bearer ' + token});
         return this.http.get<PedidosDTO[]>(`${API_config.baseUrl}/pedidos/${localStorage.getItem("idUserName")}/pedidos`,
         {'headers': authHeader2});
+    }
+
+    retornaRestaurante(id:string){
+        return this.http.get(`${API_config.baseUrl}/restaurantes/`+id, {
+            observe: 'response'
+        });
+    }
+
+    cadastraRest(bodi:RestauranteDTO){
+        console.log(bodi);
+        return this.http.post(`${API_config.baseUrl}/restaurantes`, bodi, {
+            observe: 'response'
+        });
+    }
+
+    cadastraItem(bodi:ItensDTO){
+        console.log(bodi);
+        return this.http.post(`${API_config.baseUrl}/itens-restaurante`, bodi, {
+            observe: 'response'
+        });
     }
 
 }

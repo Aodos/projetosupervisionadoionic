@@ -1,0 +1,100 @@
+<ion-content>
+  <main>
+    <div class="headerLogadoRest">
+      <img src="../../assets/imgs/LogoIpede.png">
+    </div>
+  </main>
+
+  <div class="caixaConteudoPrincipalRest">
+    <h1>Gerenciamento Restaurante</h1>   
+    <div style="
+      height: 1px;
+      background-color: #356A8D;
+    "></div> 
+
+    <div class="botaoPrincipalRest"
+        style="margin-top: 15px" *ngIf="login">
+                <button ion-button (click)="goToLogin()">Login Restaurante</button>
+        </div>
+        <div class="botaoPrincipalRest"
+        style="margin-top: 15px" *ngIf="cadastro">
+                <button ion-button (click)="goToCadastro()">Cadastro Restaurante</button>
+        </div>
+
+        <div *ngIf="loginpage">
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>ID rest</ion-label>
+            <ion-input [(ngModel)]="ID" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>Senha</ion-label>
+            <ion-input [(ngModel)]="SENHA" type="password"></ion-input>
+          </ion-item>
+
+          <div class="botaoPrincipalRest"
+          style="margin-top: 15px" >
+                  <button ion-button (click)="realizaLogin(ID,SENHA)">Realizar Login</button>
+          </div>
+
+          <div class="botaoPrincipalRest"
+          style="margin-top: 15px" >
+                  <button ion-button (click)="voltaDoLogin()">Voltar</button>
+          </div>
+
+        </div>
+
+        <div *ngIf="cadastroPage">
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>Nome Restaurante</ion-label>
+            <ion-input [(ngModel)] = "this.bodyCadast.nomeRestaurante" type="text"></ion-input>
+          </ion-item>
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>Cnpj</ion-label>
+            <ion-input [(ngModel)] = "bodyCadast.cnpjRestaurante" type="text"></ion-input>
+          </ion-item>
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>Endereco</ion-label>
+            <ion-input [(ngModel)] = "bodyCadast.endereco" type="text"></ion-input>
+          </ion-item>
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>Cidade</ion-label>
+            <ion-input [(ngModel)] = "bodyCadast.cidade" type="text"></ion-input>
+          </ion-item>
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>Cep</ion-label>
+            <ion-input [(ngModel)] = "bodyCadast.cep" type="text"></ion-input>
+          </ion-item>
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>Latitude</ion-label>
+            <ion-input [(ngModel)] = "bodyCadast.latitude" type="text"></ion-input>
+          </ion-item>
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>Longitude</ion-label>
+            <ion-input [(ngModel)] = "bodyCadast.longitude" type="text"></ion-input>
+          </ion-item>
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>Senha Restaurante</ion-label>
+            <ion-input [(ngModel)] = "bodyCadast.senhaRestaurante" type="password"></ion-input>
+          </ion-item>
+          <ion-item class="camposFlutuantes">
+            <ion-label floating>Url foto restaurante</ion-label>
+            <ion-input [(ngModel)] = "bodyCadast.url_foto_restaurante" type="text"></ion-input>
+          </ion-item>
+
+          <div class="botaoPrincipalRest"
+          style="margin-top: 15px">
+                  <button ion-button (click)="realizaCadastro()">Cadastrar Restaurante</button>
+          </div>
+          <div class="botaoPrincipalRest"
+          style="margin-top: 15px">
+                  <button ion-button (click)="voltaDoCadastro()">Voltar</button>
+          </div>
+        </div>
+   </div>
+
+   
+
+  
+
+</ion-content>

@@ -6,7 +6,7 @@
       float: left;
       ">
 
-      <div class="imgUsuario"><div><img src="../../assets/imgs/McDn.png"></div></div>
+      <div class="imgUsuario"><div><img src="{{imgCliente}}"></div></div>
       <div class="textUsuario">Olá, {{user}}</div>
 
       <div style="
@@ -31,11 +31,7 @@
       "></div>
 
       <div class="conteudoPrincipal2" *ngFor = "let x of itens" (click)="goToItem(x)">
-        <div class="ftItem" style="
-          float: right;
-          width: 120px;
-          height: 76px;
-          "></div>  
+        <div class="ftItem"><img src="{{x.url_foto_item}}"></div>  
         <div class="nomeItem" style="
           width: 190px;
           margin-left: 10px;

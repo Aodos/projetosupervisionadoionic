@@ -42,7 +42,9 @@ export class LoginPage {
     }
     let watch = this.geo.watchPosition(opt);
     watch.subscribe(resp => {
+      console.log(resp);
       this.coords = resp.coords;
+      console.log("TESTETSTETSTETSTETSTETST");
     });
   }
 
